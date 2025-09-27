@@ -130,7 +130,7 @@ const Dashboard: React.FC = () => {
 
 
     // ✅ Socket
-    socketRef.current = io("http://localhost:5000");
+    socketRef.current = io("https://safara-backend.onrender.com");
     const socket = socketRef.current;
 const onReceiveLocation = (data: LocationData) => {
       setTourists(prev => ({ ...prev, [data.id]: data }));

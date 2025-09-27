@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 
 import { io, Socket } from 'socket.io-client';
-const SOCKET_URL = (import.meta as any).env?.VITE_TOURIST_SOCKET_URL as string | undefined;
+const SOCKET_URL = (import.meta as any).env?.VITE_TOURIST_SOCKET_URL as string || "https://safara-backend.onrender.com";
 
 
 interface SOSEmergencyProps {

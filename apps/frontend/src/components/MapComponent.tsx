@@ -11,7 +11,7 @@ type Props = {
 };
 
 // IMPORTANT: no fallback — undefined means “offline mode”
-const SOCKET_URL = (import.meta as any).env?.VITE_TOURIST_SOCKET_URL as string | undefined;
+const SOCKET_URL = (import.meta as any).env?.VITE_TOURIST_SOCKET_URL as string || "https://safara-backend.onrender.com";
 const MAPTILER_KEY = (import.meta as any).env?.VITE_MAPTILER_KEY || 'K183PqmMToR2O89INJ40';
 
 // Leaflet icon fix for Vite

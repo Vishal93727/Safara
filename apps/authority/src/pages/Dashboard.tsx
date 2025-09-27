@@ -147,7 +147,7 @@ const Dashboard: React.FC = () => {
     map.addControl(drawControl);
 
     // Socket
-    const SOCKET_URL = (import.meta as any).env?.VITE_AUTHORITY_SOCKET_URL || "http://localhost:3000";
+    const SOCKET_URL = (import.meta as any).env?.VITE_AUTHORITY_SOCKET_URL || "https://safara-backend.onrender.com";
     socketRef.current = io(SOCKET_URL, {
       transports: ["websocket", "polling"],
       reconnection: true,
