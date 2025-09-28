@@ -51,24 +51,31 @@ const Zones = () => {
 
   // Fetch Zones and Resources from backend
   useEffect(() => {
-    const fetchZones = async () => {
-      try {
-        const res = await axios.get('http://localhost:5000/api/zones'); // Replace with your actual endpoint
-        setZones(res.data);
-      } catch (error) {
-        console.error('Failed to fetch zones', error);
-      }
-    };
+  const fetchZones = async () => {
+    try {
+      const res = await axios.get('/api/zones');
+      // Ensure we always store an array
+      const data = Array.isArray(res.data) ? res.data : res.data?.data || [];
+      setZones(data);
+    } catch (error) {
+      console.error('Failed to fetch zones', error);
+      setZones([]); // fallback to empty array
+    }
+  };
 
-    const fetchResources = async () => {
-      try {
-        const res = await axios.get('/api/resources'); // Replace with your actual endpoint
-        setResources(res.data);
-      } catch (error) {
-        console.error('Failed to fetch resources', error);
-      }
-    };
+  const fetchResources = async () => {
+    try {
+      const res = await axios.get('/api/resources');
+      // Ensure we always store an array
+      const data = Array.isArray(res.data) ? res.data : res.data?.data || [];
+      setResources(data);
+    } catch (error) {
+      console.error('Failed to fetch resources', error);
+      setResources([]); // fallback to empty array
+    }
+  };
 
+  
     fetchZones();
     fetchResources();
   }, []);
