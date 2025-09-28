@@ -4,7 +4,7 @@ type RegisterResponse = {
   createdAt: string;
 };
 
-const BASE = '/api/v1/pid';
+const BASE = 'https://safara-backend.onrender.com/api/v1/pid';
 
 export async function registerBasic(fullName: string, mobile: string, email: string) {
   const res = await fetch(`${BASE}/register`, {
