@@ -1,7 +1,7 @@
 type Tokens = { access: string; refresh: string };
 type User = { id: string; email?: string | null; phone?: string | null };
 
-const BASE = '/api/v1/auth';
+const BASE = 'https://safara-backend.onrender.com/api/v1/auth';
 
 export async function signup(email: string, password: string, phone?: string) {
   const res = await fetch(`${BASE}/signup`, {
