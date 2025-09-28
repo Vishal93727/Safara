@@ -18,7 +18,7 @@ const GEMINI_KEY =
   (import.meta as any).env?.VITE_GEMINI_API_KEY ||
   'AIzaSyA5gJDHaYhugMU1H-IoMpGUoJDaO9-Ipl8';
 
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_KEY}`;
+const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_KEY}`;
 
 type ChatMsg = { role: 'user' | 'ai'; text: string; ts: number };
 const msPerDay = 86_400_000;
