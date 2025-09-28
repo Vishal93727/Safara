@@ -23,7 +23,14 @@ import {
   TrendingUp,
 } from "lucide-react";
 import StatsCard from "@/components/dashboard/StatsCard";
-
+// Leaflet icon fix for Vite
+// @ts-ignore
+delete (L.Icon.Default as any).prototype._getIconUrl;
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+  iconUrl:      'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+  shadowUrl:    'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
+});
 // ---------------- TYPES ----------------
 interface Incident {
   id: string;
