@@ -1,7 +1,7 @@
 // src/lib/tourist.service.ts
 import { getSession } from '@/lib/session';
 
-const BASE = '/api/v1/tourist';
+const BASE = 'https://safara-backend.onrender.com/api/v1/tourist';
 
 function authHeaders(): Record<string, string> {
   const s = getSession();
